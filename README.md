@@ -73,7 +73,6 @@ Initial State:
 - Applied stratified sampling by airline
 - Reduced dataset: **3,000,000 → 499,998 records**
 - Maintained proportional airline distribution
-- Sampling rate: 16.7%
 
 ### 5. Dimension Reduction
 
@@ -93,17 +92,8 @@ Initial State:
 - Low-variance indicators (DIVERTED)
 - Highly correlated features (WHEELS_OFF, ARR_TIME, AIR_TIME, DISTANCE)
 
-### 6. Feature Selection
 
-**Key Variables for Analysis:**
-- `ARR_DELAY` - Arrival delay (minutes)
-- `DEP_DELAY` - Departure delay (minutes)
-- `CANCELLED` - Flight cancellation indicator
-- `ORIGIN` - Origin airport code
-- `DEST` - Destination airport code
-- `AIRLINE` - Airline identifier
-
-### 7. Feature Engineering
+### 6. Feature Engineering
 
 **Created 5 New Features:**
 
@@ -129,7 +119,7 @@ Initial State:
    - Format: `"ORIGIN-DEST"` (e.g., "LAX-JFK")
    - Purpose: Route identifier for origin-destination pairs
 
-### 8. Discretization
+### 7. Discretization
 
 **Delay Categorization:**
 ```
@@ -143,161 +133,26 @@ labels = ["Early", "OnTime", "MinorDelay", "SevereDelay"]
 - MinorDelay: 56,439 flights (11.3%)
 - SevereDelay: 28,810 flights (5.8%)
 
-### 9. Binarization
+### 8. Binarization
 
 **Binary Indicators Created:**
-- `CANCELLED`: Flight cancellation (13,311 flights, 2.7%)
-- `delay_flag`: Significant delay indicator (85,401 flights, 17.1%)
-- `is_weekend`: Weekend flight indicator (136,772 flights, 27.4%)
+- `CANCELLED`: Flight cancellation 
+- `delay_flag`: Significant delay indicator
+- `is_weekend`: Weekend flight indicator 
 
-### 10. Transformation & Scaling
-
-**Applied Techniques:**
-
-1. **MinMax Scaling:**
-   - Scaled columns: `ARR_DELAY`, `DEP_DELAY`, `taxi_ratio`, `elapsed_diff`
-   - Range: [0, 1]
-
-2. **Log Transformation:**
-   - Applied to skewed columns (skewness > 1)
-   - Created `*_log` versions for better distribution
-
----
 
 ## 📈 Final Dataset Statistics
 
 ### Dimensions
-- Shape: 499,998 rows × 45 columns
+- Shape: 499,998 rows × 29 columns
 - Missing Values: 0 (100% complete)
 
-### Column Breakdown
-- **Numeric Columns:** 35
-- **Categorical Columns:** 4
-- **Binary Columns:** 6
-- **New Features Created:** 7
 
 ### Data Quality Metrics
-- ✅ Zero missing values
-- ✅ All data types properly defined
-- ✅ Normalized numeric features
-- ✅ Categorical variables encoded
-- ✅ Derived features integrated
+- Zero missing values
+- All data types properly defined
+- Normalized numeric features
+- Categorical variables encoded
+- Derived features integrated
 
----
 
-## 📁 Output Files
-
-### 1. flights_final_optimized.csv
-- Complete preprocessed dataset
-- All 499,998 records
-- 45 features (22 original + 23 engineered/transformed)
-- Ready for analysis and modeling
-
-### 2. flights_final_preview.csv
-- Sample dataset (5,000 records)
-- Maintains data distribution
-- Quick reference and validation
-
----
-
-## 🎯 Preprocessing Summary
-
-### Transformation Pipeline
-
-```
-Original Dataset (3M × 32)
-    ↓
-Type Definition & Quality Check
-    ↓
-Missing Value Treatment (16M+ values imputed)
-    ↓
-Stratified Sampling (500K × 32)
-    ↓
-Dimension Reduction (500K × 22)
-    ↓
-Feature Engineering (+7 features)
-    ↓
-Transformation & Scaling (+7 features)
-    ↓
-Final Dataset (500K × 45)
-```
-
-### Key Achievements
-- ✅ **Data Completeness:** 100% (zero missing values)
-- ✅ **Dimension Optimization:** 31.2% column reduction
-- ✅ **Sample Efficiency:** 83.3% size reduction with maintained distribution
-- ✅ **Feature Enrichment:** +40% more analytical features
-- ✅ **Data Quality:** Normalized, scaled, and ready for ML
-
-### Preprocessing Methods Applied
-1. ✓ Data type definition
-2. ✓ Data quality assessment
-3. ✓ Missing value treatment (mean/median/mode imputation)
-4. ✓ Stratified sampling
-5. ✓ Dimension reduction (variance/correlation analysis)
-6. ✓ Feature selection (reliability & delay focus)
-7. ✓ Feature engineering (5 derived features)
-8. ✓ Discretization (delay categorization)
-9. ✓ Binarization (binary indicators)
-10. ✓ Transformation & scaling (MinMax + log transform)
-
----
-
-## 🚀 Next Steps
-
-The preprocessed dataset is now ready for:
-- **Exploratory Data Analysis (EDA)**
-- **Statistical Analysis**
-- **Machine Learning Model Development**
-- **Predictive Analytics**
-- **Visualization and Reporting**
-
----
-
-## 📝 Technical Notes
-
-### Dependencies
-- `pandas >= 1.3.0`
-- `numpy >= 1.21.0`
-- `matplotlib >= 3.4.0`
-- `seaborn >= 0.11.0`
-- `scikit-learn >= 0.24.0`
-
-### Processing Environment
-- Python 3.8+
-- Jupyter Notebook
-- Memory-optimized for large datasets
-
----
-
-## 👥 Project Information
-
-**Course:** PVDH - Data Mining and Data Warehousing
-**Phase:** I - Data Preprocessing (15%)
-**Dataset:** Flight Delay and Cancellation (2019-2023)
-**Objective:** Prepare flight data for reliability and delay analysis
-
----
-
-## 📊 Data Dictionary (Selected Features)
-
-| Feature | Type | Description |
-|---------|------|-------------|
-| FL_DATE | datetime | Flight date |
-| AIRLINE | category | Airline name |
-| ORIGIN | category | Origin airport code |
-| DEST | category | Destination airport code |
-| DEP_DELAY | float [0,1] | Departure delay (scaled) |
-| ARR_DELAY | float [0,1] | Arrival delay (scaled) |
-| CANCELLED | binary | Cancellation indicator |
-| delay_flag | binary | Delay >15min indicator |
-| elapsed_diff | float [0,1] | Actual vs scheduled duration difference |
-| taxi_ratio | float [0,1] | Ground operations efficiency |
-| avg_airline_delay | float | Airline average delay |
-| ROUTE | string | Origin-Destination pair |
-| delay_category | category | Delay severity classification |
-| is_weekend | binary | Weekend flight indicator |
-
----
-
-**Status:** ✅ Phase I Complete - Ready for Analysis
