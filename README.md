@@ -7,16 +7,14 @@
       <p>Fakulteti i Inxhinierisë Elektrike dhe Kompjuterike</p>
       <p>Inxhinieri Kompjuterike dhe Softuerike - Programi Master</p>
       <p>Profesor: Prof. Mergim Hoti</p>
-      <p>Studentë: Endrita Vllasalii
-                   Gent Zushi
-                   Milot Qorolli</p>
+      <p>Studentë: Endrita Vllasaliu, Gent Zushi, Milot Qorolli</p>
     </td>
  </tr>
 </table>
 
 # Flight Data Analysis - Data Preprocessing
 
-## 📊 Dataset Information
+## Dataset Information
 
 **Source:** [Kaggle - Flight Delay and Cancellation Dataset (2019-2023)](https://www.kaggle.com/datasets/patrickzel/flight-delay-and-cancellation-dataset-2019-2023/data)
 
@@ -36,7 +34,7 @@ The original dataset contains comprehensive flight information including:
 
 ---
 
-## 🎯 Phase I: Data Preprocessing (15%)
+## Phase I: Data Preprocessing (15%)
 
 This phase focuses on preparing raw flight data for comprehensive analysis through systematic data preprocessing techniques.
 
@@ -59,7 +57,7 @@ This phase focuses on preparing raw flight data for comprehensive analysis throu
 
 ---
 
-## 🔧 Preprocessing Pipeline
+## Preprocessing Pipeline
 
 ### 1. Data Types Definition
 - Converted `FL_DATE` to datetime format
@@ -157,7 +155,7 @@ labels = ["Early", "OnTime", "MinorDelay", "SevereDelay"]
 - `is_weekend`: Weekend flight indicator 
 
 
-## 📈 Final Dataset Statistics
+## Final Dataset Statistics
 
 ### Dimensions
 - Shape: 499,998 rows × 29 columns
