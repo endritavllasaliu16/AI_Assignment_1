@@ -1,3 +1,16 @@
+
+<table border="0">
+ <tr>
+    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/University_of_Prishtina_logo.svg/1200px-University_of_Prishtina_logo.svg.png" width="150" alt="University Logo" /></td>
+    <td>
+      <p>Universiteti i Prishtinës</p>
+      <p>Fakulteti i Inxhinierisë Elektrike dhe Kompjuterike</p>
+      <p>Inxhinieri Kompjuterike dhe Softuerike - Programi Master</p>
+      <p>Profesor: Prof. Mergim Hoti</p>
+    </td>
+ </tr>
+</table>
+
 # Flight Data Analysis - Data Preprocessing
 
 ## 📊 Dataset Information
