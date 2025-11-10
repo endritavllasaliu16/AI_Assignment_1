@@ -159,9 +159,8 @@ labels = ["Early", "OnTime", "MinorDelay", "SevereDelay"]
    - Range: [0, 1]
 
 2. **Log Transformation:**
-   - Applied to 16 skewed columns (skewness > 1)
+   - Applied to skewed columns (skewness > 1)
    - Created `*_log` versions for better distribution
-   - Examples: `DEP_DELAY_log`, `TAXI_OUT_log`, `ARR_DELAY_log`
 
 ---
 
@@ -218,7 +217,7 @@ Dimension Reduction (500K × 22)
     ↓
 Feature Engineering (+7 features)
     ↓
-Transformation & Scaling (+16 log features)
+Transformation & Scaling (+7 features)
     ↓
 Final Dataset (500K × 45)
 ```
