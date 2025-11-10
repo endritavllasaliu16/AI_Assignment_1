@@ -7,6 +7,9 @@
       <p>Fakulteti i Inxhinierisë Elektrike dhe Kompjuterike</p>
       <p>Inxhinieri Kompjuterike dhe Softuerike - Programi Master</p>
       <p>Profesor: Prof. Mergim Hoti</p>
+      <p>Studentë: Endrita Vllasalii
+                   Gent Zushi
+                   Milot Qorolli</p>
     </td>
  </tr>
 </table>
